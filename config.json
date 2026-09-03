@@ -1,0 +1,16 @@
+{
+    "Keywords": ["((microgravity) OR (simulated microgravity))"],
+    "deep_mode_path": "",
+    "shallow_mode_path": "Output/",
+    "num_testpage": 5,
+    "Override": true,
+    "is_shallow_mode": true,
+    "is_deep_mode": false,
+    "page_num_limit": 8,
+    "resume": true,
+    "Start Year": 2024,
+    "mode": "test",
+    "citation_level_limit": 2,
+    "number_of_threads": 5,
+    "refresh_time": 60
+}
