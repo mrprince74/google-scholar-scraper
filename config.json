@@ -1,7 +1,7 @@
 {
-    "Keywords": ["((microgravity) OR (simulated microgravity))"],
+    "Keywords": [""],
     "deep_mode_path": "",
-    "shallow_mode_path": "Output/",
+    "shallow_mode_path": "",
     "num_testpage": 5,
     "Override": true,
     "is_shallow_mode": true,
