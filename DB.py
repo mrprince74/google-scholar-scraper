@@ -111,7 +111,7 @@ class Database(metaclass = SingletonMeta):
             self.db.to_csv(self.db_file_name)
         
     def _move_iter_pointer(self):
-        while self.next_db_index < len(self.db) and (self.db.at[self.next_db_index, 'Scraped'] == True or self.db.at[self.next_db_index, 'Year'] < self.start_year):
+        while self.next_db_index and self.next_db_index < len(self.db) and (self.db.at[self.next_db_index, 'Scraped'] == True or self.db.at[self.next_db_index, 'Year'] < self.start_year):
             self.next_db_index+= 1
 
     

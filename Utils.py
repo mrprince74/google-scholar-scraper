@@ -1,6 +1,7 @@
 import threading
 import math
 import random
+from urllib.parse import quote
 from VPNController import VPNController
 from Env import Env, logger
 from bs4 import BeautifulSoup as BS
@@ -24,12 +25,19 @@ def increase_total_requests():
         #     Env.total_requests = 0
     
 
+def get_driver():
+    import undetected_chromedriver as uc
+    options = uc.ChromeOptions()
+    options.binary_location = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    options.add_argument(
+        "--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 12_5_7 like Mac OS X) "
+        "AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 "
+        "[FBAN/FBIOS;FBAV/456.1.0.43.109;FBBV/594430238;FBDV/iPhone7,2;FBMD/iPhone;FBSN/iOS;FBSV/12.5.7;FBSS/2;FBCR/;FBID/phone;FBLC/pl_PL;FBOP/80]"
+    )
+    options.add_argument("--disable-extensions")
+    options.add_argument("--disable-sync")
 
-def get_driver(options = Options()):
-    # options.add_argument('--headless')
-    driver = webdriver.Chrome(options = options)
-    return driver
-    
+    return uc.Chrome(options=options,version_main=131)
 
 
 def read_text_file(file_path):
