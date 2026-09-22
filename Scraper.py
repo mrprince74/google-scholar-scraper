@@ -34,9 +34,7 @@ class Scraper:
         
     def __config(self):
         self.cur_user_agent = random.choice(self.user_agents)
-        self.options = Options()
-        self.options.add_argument(f"user-agent={self.cur_user_agent}")
-        self.driver = get_driver(options = self.options)
+        self.driver = get_driver()
         self.external_driver = None
 
     
@@ -370,9 +368,7 @@ class Completer:
                 "download.directory_upgrade": True,
                 "plugins.always_open_pdf_externally": True #It will not show PDF directly in chrome
             })
-        user_agent = UserAgent().random
-        options.add_argument(f"user-agent={user_agent}")
-        self.driver = get_driver(options = options)
+        self.driver = get_driver()
         self.external_driver = None
         self.__login()
 
